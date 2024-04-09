@@ -35,7 +35,8 @@ def load_saved_artifacts():
     
     with open("./artifacts/columns.json", 'r') as f:
         __data_colomns = json.load(f)['data_columns']
-        __locations = __data_colomns[3:] #first 3 are sqft, bath and bhk
+        # __locations = [column for i, column in enumerate(__data_colomns) if i >= 3]
+        __locations = __data_colomns #first 3 are sqft, bath and bhk are removed
     
     if __model is None:  
         with open("./artifacts/linear_re_estate_predict_model.pkl", 'rb') as f:
