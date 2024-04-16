@@ -22,7 +22,7 @@ def get_estimated_price(location, sqft, bhk, bath):
     return round(__model.predict([x])[0], 2)
 
 def get_location_names():
-    return __locations
+    return __locations[3:]
 
 def get_data_columns():
     return __data_columns
