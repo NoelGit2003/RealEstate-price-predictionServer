@@ -3,16 +3,16 @@ import pickle
 import numpy as np
 
 __locations = None
-__data_colomns = None
+__data_columns = None
 __model = None
 
 def get_estimated_price(location, sqft, bhk, bath):
     try:
-        loc_index = __data_colomns.index(location.lower())
-    except:
+        loc_index = __data_columns.index(location.lower())
+    except ValueError:
         loc_index = -1
     
-    x = np.zeros(len(__data_colomns))
+    x = np.zeros(len(__data_columns))
     x[0] = sqft
     x[1] = bath
     x[2] = bhk
@@ -24,19 +24,19 @@ def get_estimated_price(location, sqft, bhk, bath):
 def get_location_names():
     return __locations
 
-def get_location_names():
-    return __data_colomns
+def get_data_columns():
+    return __data_columns
 
 def load_saved_artifacts():
-    print("loading saved artifacts...start")
-    global __data_colomns
+    print("Loading saved artifacts...start")
+    global __data_columns
     global __locations
     global __model
     
     with open("./artifacts/columns.json", 'r') as f:
-        __data_colomns = json.load(f)['data_columns']
-        # __locations = [column for i, column in enumerate(__data_colomns) if i >= 3]
-        __locations = __data_colomns #first 3 are sqft, bath and bhk are removed
+        __data_columns = json.load(f)['data_columns']
+        # __locations = [column for i, column in enumerate(__data_columns) if i >= 3]
+        __locations = __data_columns # first 3 are sqft, bath, and bhk
     
     if __model is None:  
         with open("./artifacts/linear_re_estate_predict_model.pkl", 'rb') as f:
@@ -47,5 +47,3 @@ def load_saved_artifacts():
 if __name__ == "__main__":
     load_saved_artifacts()
     print(get_location_names())
-    print(get_estimated_price('1st Phase JP Nagar', 1000, 3, 3))
-    
