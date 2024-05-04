@@ -7,10 +7,7 @@ setup(
     install_requires=[     
         'flask',
         'python-dotenv',
-        'json', 
-        'pickle',
         'numpy',
-        'flask_cors',
-        'os'
+        'flask-cors'
     ],
 )
