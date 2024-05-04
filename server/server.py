@@ -48,8 +48,3 @@ if __name__ == "__main__":
     util.load_saved_artifacts()
     print(util.get_estimated_price('1st Phase JP Nagar', 1000, 3, 3))
     app.run(port=int(port))
-    
-
-    
-
-    
