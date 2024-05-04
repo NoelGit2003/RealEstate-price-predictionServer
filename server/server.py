@@ -41,7 +41,7 @@ def predict_home_price():
         return jsonify({'error': error_message}), 400
  
  
-port = os.getenv("PORT")   
+port = os.getenv("PORT") or 5000
     
 if __name__ == "__main__":
     print("Starting server for AI prediction")
