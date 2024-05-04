@@ -1,5 +1,5 @@
-flask==2.0.2
-python-dotenv==0.19.1
+flask
+python-dotenv
 numpy
 flask-cors
 Werkzeug
