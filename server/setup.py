@@ -8,6 +8,7 @@ setup(
         'flask',
         'python-dotenv',
         'numpy',
-        'flask-cors'
+        'flask-cors',
+        'pipreqs'
     ],
 )
