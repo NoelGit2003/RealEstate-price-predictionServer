@@ -3,4 +3,4 @@ python-dotenv
 numpy
 flask-cors
 Werkzeug
-
+sklearn
