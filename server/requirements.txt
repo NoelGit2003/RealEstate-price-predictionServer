@@ -1,5 +1,5 @@
 flask==2.0.2
 python-dotenv==0.19.1
-numpy==1.21.6
+numpy
 flask-cors
 
